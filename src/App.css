@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: serif;
+  background-color: #F08A5D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
+}
+
+.container {
+  height: 360px;
+  width: 360px;
+  border: 1em solid #6A2C70;
+  background-color: #6A2C70;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1em;
+}
+
+.card_div {
+  background-color: #B83B5E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  animation: 2s hideCard linear;
+  transition: transform 0.5s;
+}
+
+@keyframes hideCard {
+
+  0%,
+  70% {
+    transform: rotateY(0);
+  }
+
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.card_div img {
+  max-width: 80%;
+  max-height: 80%;
+  transition: transform 0.5s;
+  transform: scale(0);
+  animation: 2s hideImag linear;
+}
+
+@keyframes hideImag {
+
+  0%,
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.card_div.active {
+  transform: rotateY(0);
+}
+
+.card_div.correct {
+  background-color: #D9F8C4;
+}
+
+.card_div.wrong {
+  background-color: #FF1E00;
+}
+
+.card_div.active img {
+  transform: scale(1)
+}
+
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 80px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.button {
+  background-color: #6A2C70;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer
+}
+
+.button:hover{
+  background-color: white;
+  color: #6A2C70;
+}
+
+.button-div {
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.ModalSuccesse{
+  position: absolute;
+  align-self: center;
+  background-color: #F08A5D ;
+  color: black;
+  border-radius: 8px;
+  padding: 44px;
+  text-align: center;
+  font-weight: bold;
+}
